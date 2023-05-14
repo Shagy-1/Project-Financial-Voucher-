@@ -1,8 +1,8 @@
--- Create the database
+
 CREATE DATABASE IF NOT EXISTS university;
 USE university;
 
--- Create the "Student" table
+"Student" table
 CREATE TABLE IF NOT EXISTS Student (
     student_id INT PRIMARY KEY,
     student_name VARCHAR(100),
@@ -12,7 +12,6 @@ CREATE TABLE IF NOT EXISTS Student (
     FOREIGN KEY (program_id) REFERENCES Program(program_id)
 );
 
--- Create the "Employees" table
 CREATE TABLE IF NOT EXISTS Employees (
     employee_id INT PRIMARY KEY,
     employee_name VARCHAR(100),
@@ -21,7 +20,6 @@ CREATE TABLE IF NOT EXISTS Employees (
     FOREIGN KEY (department_id) REFERENCES Department(department_id)
 );
 
--- Create the "Financing Voucher" table
 CREATE TABLE IF NOT EXISTS `Financing Voucher` (
     voucher_id INT PRIMARY KEY,
     student_id INT,
@@ -30,7 +28,7 @@ CREATE TABLE IF NOT EXISTS `Financing Voucher` (
     FOREIGN KEY (student_id) REFERENCES Student(student_id)
 );
 
--- Create the "Program" table
+
 CREATE TABLE IF NOT EXISTS Program (
     program_id INT PRIMARY KEY,
     program_name VARCHAR(100)
